@@ -6,7 +6,7 @@ set -e
 # repo
 ################################################################################
 # helm repo add loki-stack https://kmpartner.github.io/loki-grafana-volume
-helm repo add loki-volume https://grafana.github.io/loki/charts
+helm repo add loki https://grafana.github.io/loki/charts
 
 helm repo update
 
@@ -14,7 +14,7 @@ helm repo update
 # chart
 ################################################################################
 STACK="loki-volume"
-CHART="loki-volume/loki-stack"
+CHART="loki/loki-stack"
 CHART_VERSION="0.40.1"
 NAMESPACE="loki"
 

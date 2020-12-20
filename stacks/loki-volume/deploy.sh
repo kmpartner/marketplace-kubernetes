@@ -34,7 +34,8 @@ helm upgrade "$STACK" "$CHART" \
   --namespace "$NAMESPACE" \
   --values "$values" \
   --version "$CHART_VERSION" \
-  --set "loki.persistence.enabled=true" --set "loki.persistence.size=10Gi" --set "loki.persistence.storageClassName=do-block-storage" --set "grafana.enabled=true"
+  --set "loki.persistence.enabled=true" --set "loki.persistence.size=10Gi" --set "grafana.enabled=true"
+  # --set "loki.persistence.enabled=true" --set "loki.persistence.size=10Gi" --set "loki.persistence.storageClassName=do-block-storage" --set "grafana.enabled=true"
 
 
 kubectl -n loki patch deployment loki-volume-grafana --patch "$(cat grafana-patch-file.yaml)"
